@@ -1,0 +1,9 @@
+{
+  "grammars": [
+    {
+      "name": "ion",
+      "path": ".",
+      "scope": "source.ion"
+    }
+  ]
+}
