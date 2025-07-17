@@ -153,7 +153,7 @@ module.exports = grammar({
     // S-expression values
     sexp: $ => choice(
       'null.sexp',
-      seq('(', repeat($._value), ')')
+      seq('(', repeat(choice($._value, $.operator)), ')')
     ),
 
     // Struct values
@@ -177,6 +177,10 @@ module.exports = grammar({
     annotation: $ => choice(
       $.symbol,
       $.string
+    ),
+
+    operator: _ => choice(
+      '!', '#', '%', '&', '*', '+', '-', '.', '/', ';', '<', '=', '>', '?', '@', '^', '`', '|', '~'
     ),
 
     // Comments
