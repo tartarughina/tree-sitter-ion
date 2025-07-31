@@ -180,7 +180,7 @@ module.exports = grammar({
     ),
 
     // Comments
-    line_comment: _ => token(seq('//', /(\\+(.|\r?\n)|[^\\\n])*/)),
-    block_comment: _ => token(seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/')),
+    line_comment: _ => token(prec(-10, seq('//', /(\\+(.|\r?\n)|[^\\\n])*/))),
+    block_comment: _ => token(prec(-10, seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'))),
   }
 });
