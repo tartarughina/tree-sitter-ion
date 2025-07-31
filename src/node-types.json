@@ -91,11 +91,6 @@
     "fields": {}
   },
   {
-    "type": "block_comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "bool",
     "named": true,
     "fields": {}
@@ -184,11 +179,6 @@
   },
   {
     "type": "int",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "line_comment",
     "named": true,
     "fields": {}
   },
@@ -503,14 +493,6 @@
     "named": false
   },
   {
-    "type": "/*",
-    "named": false
-  },
-  {
-    "type": "//",
-    "named": false
-  },
-  {
     "type": ":",
     "named": false
   },
@@ -559,8 +541,18 @@
     "named": false
   },
   {
+    "type": "block_comment",
+    "named": true,
+    "extra": true
+  },
+  {
     "type": "false",
     "named": false
+  },
+  {
+    "type": "line_comment",
+    "named": true,
+    "extra": true
   },
   {
     "type": "null",

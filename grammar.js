@@ -16,10 +16,6 @@ module.exports = grammar({
     $.block_comment,
   ],
 
-  conflicts: $ => [
-    [$.annotated_value, $._value]
-  ],
-
   rules: {
     source_file: $ => repeat($._value),
 
@@ -184,7 +180,7 @@ module.exports = grammar({
     ),
 
     // Comments
-    line_comment: _ => seq('//', /.*/),
-    block_comment: _ => seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+    line_comment: _ => token(seq('//', /(\\+(.|\r?\n)|[^\\\n])*/)),
+    block_comment: _ => token(seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/')),
   }
 });
