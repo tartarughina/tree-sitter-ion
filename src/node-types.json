@@ -276,6 +276,10 @@
           "named": true
         },
         {
+          "type": "block_comment",
+          "named": true
+        },
+        {
           "type": "bool",
           "named": true
         },
@@ -293,6 +297,10 @@
         },
         {
           "type": "int",
+          "named": true
+        },
+        {
+          "type": "line_comment",
           "named": true
         },
         {
@@ -333,7 +341,6 @@
   {
     "type": "source_file",
     "named": true,
-    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -542,8 +549,7 @@
   },
   {
     "type": "block_comment",
-    "named": true,
-    "extra": true
+    "named": true
   },
   {
     "type": "false",
@@ -551,8 +557,7 @@
   },
   {
     "type": "line_comment",
-    "named": true,
-    "extra": true
+    "named": true
   },
   {
     "type": "null",
