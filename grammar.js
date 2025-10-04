@@ -119,7 +119,7 @@ module.exports = grammar({
     _quoted_symbol: _ => seq(
       "'",
       repeat(choice(
-        /[^'\\]/,
+        token.immediate(prec(1, /[^'\\]/)),
         /\\./
       )),
       "'"
@@ -136,7 +136,7 @@ module.exports = grammar({
     // Clob values
     clob: $ => choice(
       'null.clob',
-      seq('{{', '"', repeat(choice(/[^"\\]/, /\\./)), '"', '}}'),
+      seq('{{', '"', repeat(choice(token.immediate(prec(1, /[^"\\\n]/)), /\\./)), '"', '}}'),
       seq("{{'''", repeat(choice(/[^']/, /'[^']/, /''[^']/)), "'''}}")
     ),
 
