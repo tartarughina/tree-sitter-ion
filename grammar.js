@@ -93,7 +93,7 @@ module.exports = grammar({
     _quoted_string: _ => seq(
       '"',
       repeat(choice(
-        /[^"\\]/,
+        token.immediate(prec(1, /[^"\\\n]/)),
         /\\./
       )),
       '"'
